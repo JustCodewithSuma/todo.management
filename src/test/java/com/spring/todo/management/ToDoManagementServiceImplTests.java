@@ -1,5 +1,6 @@
 package com.spring.todo.management;
 
+import com.spring.todo.management.exception.BusinessInputValidationException;
 import com.spring.todo.management.model.EntityToDo;
 import com.spring.todo.management.model.ToDoModel;
 import com.spring.todo.management.repository.ToDoManagementRepository;
@@ -140,6 +141,14 @@ public class ToDoManagementServiceImplTests {
         Assertions.assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
         Assertions.assertNotNull(Objects.requireNonNull(responseEntity.getBody()));
         Assertions.assertEquals(responseEntity.getBody().getStatus(),"testStatusCheck");
+    }
+
+    @Test
+    public void testUpdateStatusOfToDoWhenPastDue() {
+        sampleEntityData.setStatus("past due");
+        Mockito.when(toDoManagementRepository.findById(Mockito.any())).thenReturn(Optional.ofNullable(sampleEntityData));
+        Exception exception = Assert.assertThrows(BusinessInputValidationException.class,() -> { toDoManagementServiceImpl.updateStatusOfToDo(12L,"done");});
+        Assertions.assertEquals(exception.getMessage(), "Change in status is not allowed");
     }
 
     @Test

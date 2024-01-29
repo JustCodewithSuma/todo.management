@@ -1,0 +1,33 @@
+
+environment:
+  name: "prod"
+  environmentName: "prod"
+  replicas:
+    quantity: 1
+  resources:
+    xmx: 700M
+    xms: 200M
+    requests:
+      memory: "800Mi"
+      cpu: "100m"
+    limits:
+      memory: "2Gi"
+      cpu: "2"
+
+spring:
+  application:
+    name: todo-management-service
+
+image:
+  name: "todoManagementApi"
+  tag: "latest"
+  debug:
+    enabled: false
+    port: 1234
+
+ingress:
+  host: todo.management.specification
+
+
+application:
+  name: todo-management-service

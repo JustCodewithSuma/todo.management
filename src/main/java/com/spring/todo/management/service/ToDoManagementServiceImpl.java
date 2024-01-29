@@ -76,11 +76,14 @@ public class ToDoManagementServiceImpl implements ToDoManagementService {
 
     @Override
     public ResponseEntity<ToDoModel> updateStatusOfToDo(Long id, String status) {
+
         ResponseEntity<ToDoModel> responseFromDb = retrieveItem(id);
 
         ToDoModel toDoModel = responseFromDb.getBody();
         if(status.isEmpty())
-            throw new BusinessInputValidationException("Input cannot be empty");
+            throw new BusinessInputValidationException("Status cannot be empty");
+        else if(toDoModel.getStatus().equalsIgnoreCase("past due"))
+            throw new BusinessInputValidationException("Change in status is not allowed");
         else
             toDoModel.setStatus(status);
         toDoModel.setCompletedDate(LocalDateTime.now());

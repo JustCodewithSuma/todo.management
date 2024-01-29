@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "bbdf94c1-9c3f-41cc-8267-4749cdc68677",
+		"name": "ToDoManagementBackendService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15433428",
+		"_collection_link": "https://bold-equinox-661193.postman.co/workspace/My-Workspace~09127f04-4b0c-4471-826f-13e9108ebd1c/collection/15433428-bbdf94c1-9c3f-41cc-8267-4749cdc68677?action=share&source=collection_link&creator=15433428"
+	},
+	"item": [
+		{
+			"name": "Get details of a specific Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all items with Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo?status=\"done\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "\"done\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change description",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo/update/1?description=\"not done\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "\"not done\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark an item done",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark an item not done",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"testPost123\",\"status\":\"notdone\",\"creationDate\":\"2024-01-25T19:13:00.187801\",\"dueDate\":\"2024-01-27T19:13:00.187844\",\"completedDate\":\"2024-01-05T03:20:00\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/management/listTodo/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"management",
+						"listTodo",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

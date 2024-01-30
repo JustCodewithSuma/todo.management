@@ -17,6 +17,8 @@ Following assumptions are made:
 When we add an Item, creationDate is mandatory,date-time at which the item was marked as done should be either 5min more than the creationDate.
 When we update the status of an Item as done or not done, then the completion date is always the system LocalDateTime.
 Service forbids the status change of the items which are "past due".
+Service also has a Scheduler running at the backend for every 5hours time interval(this configuration can be changed in application.yaml) and 
+automatically updates the status of the items that arew past their due as past due 
 
 Run the tests:
 Right-click on the test folder and run the tests as Run Tests or Run Tests with Coverage.

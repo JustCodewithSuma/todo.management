@@ -10,3 +10,7 @@ spring:
   h2:
     console:
       enabled: true
+
+#Scheduler timer configurations -5Hours default
+statusUpdateRule:
+  scheduleTimer: 3 # Hours
